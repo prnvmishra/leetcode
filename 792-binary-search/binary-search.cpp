@@ -5,14 +5,12 @@ public:
          int n = nums.size();
         int start =0;
         int end = n-1;
-        int ans = -1;
         int k = target;
         
         while(start<=end){
             int mid = (start+end)/2;
             if(nums[mid]==k){
                 return mid;
-                end = mid -1;
             }
             else if(nums[mid]<k){
                 start = mid+1;
@@ -21,6 +19,6 @@ public:
                 end = mid -1;
             }
         }
-        return ans;
+        return -1;
     }
 };
