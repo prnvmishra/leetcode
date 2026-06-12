@@ -14,7 +14,7 @@ public:
                 return false;
         }
 
-        return nums[n - 1] == n && nums[n] == n;
+        return nums[n - 1] == n ;
     }
 };
     
