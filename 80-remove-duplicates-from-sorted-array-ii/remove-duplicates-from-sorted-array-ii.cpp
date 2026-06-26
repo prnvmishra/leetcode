@@ -8,8 +8,8 @@ public:
         
 
         int cm = 2;
-        int off = 1;   // last valid index
-        int res = 2;   // first two elements are always allowed
+        int off = 1;   
+        int res = 2;   
 
         while (cm < n) {
             if (nums[cm] == nums[off] &&
