@@ -1,12 +1,29 @@
 class Solution {
- public:
-  int removeDuplicates(vector<int>& nums) {
-    int i = 0;
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int n = nums.size();
+        if(n<2){
+            return n;
+        }
+        
 
-    for (const int num : nums)
-      if (i < 2 || num > nums[i - 2])
-        nums[i++] = num;
+        int cm = 2;
+        int off = 1;   // last valid index
+        int res = 2;   // first two elements are always allowed
 
-    return i;
-  }
+        while (cm < n) {
+            if (nums[cm] == nums[off] &&
+                nums[cm] == nums[off - 1]) {
+                cm++;
+            }
+            else {
+                nums[off + 1] = nums[cm];
+                off++;
+                cm++;
+                res++;
+            }
+        }
+
+        return res;
+    }
 };
