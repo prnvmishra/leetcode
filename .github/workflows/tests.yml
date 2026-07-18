@@ -1,0 +1,16 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  cpp-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show compiler version
+        run: g++ --version
+      - name: Run C++ unit tests
+        run: ./run_tests.sh
+        working-directory: tests
