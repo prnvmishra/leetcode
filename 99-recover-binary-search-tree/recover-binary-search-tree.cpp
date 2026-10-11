@@ -13,7 +13,7 @@ public:
 
         solve(root->left);
 
-        if (prev != nullptr && root->val < prev->val) {
+        if (prev != nullptr && root->val <= prev->val) {
             if (galat == 0) {
                 g1 = prev;
                 g2 = root;
